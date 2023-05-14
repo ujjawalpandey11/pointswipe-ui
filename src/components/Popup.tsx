@@ -2,20 +2,27 @@ import { useState } from "react";
 import "./Popup.css"
 
 export default function Popup() {
-    const [style, setStyle] = useState("popup-close");
-    
+    const [popupWindowStyle, setPopupWindowStyle] = useState("popup-close");
+    const [giftButtonStyle, setGiftButtonStyle] = useState("popup-open");
+    const [closeButtonStyle, setCloseButtonStyle] = useState("popup-close");
+
     const openForm = async (e: any) => {
-        if (style == "popup-close") {
-            setStyle("popup-open");
+        if (popupWindowStyle === "popup-close") {
+            setPopupWindowStyle("popup-open");
+            setGiftButtonStyle("popup-close");
+            setCloseButtonStyle("popup-open");
         }
         else {
-            setStyle("popup-close");
+            setPopupWindowStyle("popup-close");
+            setGiftButtonStyle("popup-open");
+            setCloseButtonStyle("popup-close");
         }
     }
+    let popupBoxStyle = popupWindowStyle + " position-relative bottom-0 end-0";
     return (
-        <div className="popup">
+        <div className="popup position-fixed bottom-0 end-0">
 
-            <div className={style} id="myForm">
+            <div className={popupBoxStyle} id="myForm" style={{ marginBottom: "35px" }}>
                 <form className="form-container">
                     <div className="pretext" style={{ marginLeft: "15px" }}>
                         <span>👋 Hi, Name</span>
@@ -189,9 +196,12 @@ export default function Popup() {
                 </form>
             </div >
             <br />
-            <button className="open-button" onClick={openForm}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-gift-fill" viewBox="0 0 16 16">
+            <button className="open-button position-absolute bottom-0 end-0" onClick={openForm}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={giftButtonStyle} viewBox="0 0 16 16">
                     <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={closeButtonStyle} viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                 </svg>
             </button>
         </div >
