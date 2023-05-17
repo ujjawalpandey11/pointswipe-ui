@@ -1,5 +1,6 @@
 import RuleCard from "./RuleCard"
 import "./Home.css"
+import { Link } from "react-router-dom"
 
 export default function BurningSection() {
     let burnHelper = "Define your redeeming rules just like earning rules. Control how the users are allowed to redeem the points or rewards across geography"
@@ -19,7 +20,7 @@ export default function BurningSection() {
                         <div className="row row-margin">
                             <RuleCard name="Burning Rule 1" condition="Condition: " duration="" />
                         </div>
-                        <a href="#" className="btn btn-dark">Set New Rule</a>
+                        <Link to="/burning-rule" className="btn btn-dark">Set New Rule</Link>
                     </div>
 
                 </div>

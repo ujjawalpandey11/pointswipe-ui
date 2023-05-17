@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import './Tier.css'
+import './EarningRule.css'
 
-export default function EarningRuleHeading() {
+export default function TierHeading() {
     return (
         <div className="mt-2 mb-2">
             <h3>
@@ -10,7 +10,7 @@ export default function EarningRuleHeading() {
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                     </svg>
                 </Link>
-                Add Tier / Edit Tier
+                Add / Edit Earning Rules
             </h3>
             <hr></hr>
         </div>

@@ -1,5 +1,6 @@
 import RuleCard from "./RuleCard"
 import "./Home.css"
+import { Link } from "react-router-dom"
 
 export default function EarningSection() {
     let earnHelper = "Define your earning rules based on the Tiers, dates, purchase patterns.Also pause, play, delete the existing rules based on the business performance"
@@ -20,7 +21,7 @@ export default function EarningSection() {
                             <RuleCard name="Earning Rule 1" condition="Multiplier: 0.2" duration="" />
                             <RuleCard name="Earning Rule 2" condition="Multiplier: 0.1" duration="" />
                         </div>
-                        <a href="#" className="btn btn-dark">Set New Rule</a>
+                        <Link to="/earning-rule" className="btn btn-dark">Set New Rule</Link>
                     </div>
 
                 </div>

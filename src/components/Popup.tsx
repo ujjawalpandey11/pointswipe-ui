@@ -22,7 +22,7 @@ export default function Popup() {
     return (
         <div className="popup position-fixed bottom-0 end-0">
 
-            <div className={popupBoxStyle} id="myForm" style={{ marginBottom: "35px" }}>
+            <div className={popupBoxStyle} id="myForm" style={{ marginBottom: "35px"}}>
                 <form className="form-container">
                     <div className="pretext" style={{ marginLeft: "15px" }}>
                         <span>👋 Hi, Name</span>
